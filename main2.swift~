@@ -1,0 +1,41 @@
+let words = ["bark", "shallow", "box", "apple", "dragon", "sack", "armadillo", "aardavark"]
+
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+var done : [String] = []
+
+var index = 0
+var index2 = 0
+
+for letter in letters {
+    var sorted : [String] = []
+    for word in words { 
+        if String(word.first!) == String(letter) {
+            sorted.append(word)
+        }
+        
+        index += 1
+    }
+    for letter in letters {
+        for word in sorted {
+            //let secLet = word.index(after: word.startIndex)
+            //print(word[secLet])
+            let char2 = Array(word)[1]
+            
+            if String(char2) == String(letter) {
+                done.append(word)
+            }
+            index2 += 1
+        }
+    }
+}
+
+
+
+for word in done {
+    print(word)
+}
+
+//var str = "string"
+//let index = str.index(after: str.startIndex)
+//print(str[index])
