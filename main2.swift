@@ -1,11 +1,8 @@
-let words = ["bark", "shallow", "box", "Avanish", "apple", "dragon", "Kevin", "sack", "Isaac", "armadillo", "aardavark", "alligator", "ark"]
+let words = ["bark", "shallow", "box", "Avanish", "apple", "dragon", "Kevin", "sack", "Isaac", "armadillo", "aardavark", "alligator", "ark", "is"]
 
-let letters = ["A", "a", "B", "b", "C", "c", "D", "d", "E", "e", "F", "f", "G", "g", "H", "h", "I", "i", "J", "j", "K", "k", "L", "l", "M", "m", "N", "n", "O", "o", "P", "p", "Q", "q", "R", "r", "S", "s", "T", "t", "U", "u", "V", "v", "W", "w", "X", "x", "Y", "y", "Z", "z"]
+let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 var done : [String] = []
-
-//var index = 0
-//var index2 = 0
 
 for letter in letters {
     var sorted : [String] = []
@@ -24,7 +21,9 @@ for letter in letters {
                     sorted2.append(word)
                 }
             } else {
-                sorted2.append(word)
+                if !sorted2.contains(word) {
+                    sorted2.append(word)
+                }
             }
         }
 //Checks 3rd letter
@@ -32,11 +31,13 @@ for letter in letters {
             for word in sorted2 {
                 if word.count > 2 {
                     let char3 = Array(word)[2]   
-                    if String(char3) == String(letter ) {
+                    if String(char3) == String(letter) {
                         done.append(word)
                     }
                 } else {
-                    done.append(word)
+                    if !done.contains(word) {
+                        done.append(word)
+                    }
                 }
             }
         }
