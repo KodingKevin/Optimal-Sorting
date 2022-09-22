@@ -1,4 +1,4 @@
-let words = ["bark", "shallow", "box", "Avanish", "apple", "dragon", "Kevin", "sack", "Isaac", "armadillo", "aardavark", "alligator", "ark", "is", "time", "timeless", "shall", "bark", "shallow", "box", "Avanish", "apple", "dragon", "Kevin", "sack", "Isaac", "armadillo", "aardavark", "alligator", "ark", "is", "time", "timeless", "shall", "bark", "shallow", "box", "Avanish", "apple", "dragon", "Kevin", "sack", "Isaac", "armadillo", "aardavark", "alligator", "ark", "is", "time", "timeless", "shall", "bark", "shallow", "box", "Avanish", "apple", "dragon", "Kevin", "sack", "Isaac", "armadillo", "aardavark", "alligator", "ark", "is", "time", "timeless", "shall"]
+let words = ["bark", "shallow", "box", "Avanish", "apple", "dragon", "Kevin", "sack", "Isaac", "armadillo", "aardavark", "alligator", "ark", "is", "time", "timeless", "shall"]
 
 let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
@@ -40,7 +40,7 @@ for letter in letters {
                         sorted3.append(word)
                     }
                 }
-            }
+            } 
             for letter in letters {
                 var sorted4 : [String] = []
                 for word in sorted3 {
@@ -56,15 +56,30 @@ for letter in letters {
                     }
                 }
                 for letter in letters {
+                    var sorted5 : [String] = []
                     for word in sorted4 {
                         if word.count > 4 {
                             let char5 = Array(word)[4]
                             if String(char5) == String(letter) {
-                                done.append(word)
+                                sorted5.append(word)
                                                          }
                         } else {
-                            if !done.contains(word) {
-                                done.append(word)
+                            if !sorted5.contains(word) {
+                                sorted5.append(word)
+                            }
+                        }
+                    }
+                    for letter in letters {
+                        for word in sorted5 {
+                            if word.count > 5 {
+                                let char6 = Array(word)[5]
+                                if String(char6) == String(letter) {
+                                    done.append(word)
+                                }
+                            } else {
+                                if !done.contains(word) {
+                                    done.append(word)
+                                }
                             }
                         }
                     }
